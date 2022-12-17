@@ -44,6 +44,34 @@ const zAlgorithm = (str) => {
   return z;
 }
 
-zAlgorithm();
 
-//export default zAlgorithm;
+console.log(JSON.stringify(zAlgorithm("banana")) === JSON.stringify([6, 0, 0, 0, 0, 0]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("abcacabcab")) === JSON.stringify([10, 0, 0, 1, 0, 4, 0, 0, 2, 0]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("abcabdabcabdabx")) === JSON.stringify([15, 0, 0, 2, 0, 0, 8, 0, 0, 2, 0, 0, 2, 0, 0]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("aabcaabxaaaz")) === JSON.stringify([12, 1, 0, 0, 3, 1, 0, 0, 2, 2, 1, 0]));
+// Expected output: true
+
+
+console.log(JSON.stringify(zAlgorithm("abcdefghijklmnopqrstuvwxyz")) === JSON.stringify([26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("aaaaaa")) === JSON.stringify([6, 5, 4, 3, 2, 1]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("abababab")) === JSON.stringify([8, 0, 6, 0, 4, 0, 2, 0]));
+
+console.log(JSON.stringify(zAlgorithm("abcdabcdabcd")) === JSON.stringify([12, 0, 0, 0, 8, 0, 0, 0, 4, 0, 0, 0]));
+// Expected output: true
+
+// Edge cases
+console.log(JSON.stringify(zAlgorithm("")) === JSON.stringify([0]));
+// Expected output: true
+
+console.log(JSON.stringify(zAlgorithm("a")) === JSON.stringify([1]));
+// Expected output: true
